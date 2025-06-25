@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SaveData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://ores/ore_resource.gd" id="1_ynjs8"]
+[ext_resource type="Script" path="res://saves/save_data.gd" id="2_oufwy"]
+
+[resource]
+script = ExtResource("2_oufwy")
+shovel_level = 1
+max_inventory_size = 5
+inventory = Array[ExtResource("1_ynjs8")]([])
+money = 2102

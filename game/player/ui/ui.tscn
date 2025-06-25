@@ -1,0 +1,92 @@
+[gd_scene load_steps=2 format=3 uid="uid://k3pkdqubt8re"]
+
+[ext_resource type="Script" uid="uid://ctbc3arejujw0" path="res://player/ui/ui.gd" id="1_6xof2"]
+
+[node name="UI" type="Control" groups=["ui"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+script = ExtResource("1_6xof2")
+
+[node name="Inventory" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="Inventory"]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Inventory" type="VBoxContainer" parent="Inventory/Panel/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="InventoryLabel" type="Label" parent="Inventory/Panel/MarginContainer/Inventory"]
+layout_mode = 2
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InventorySlots" type="Label" parent="Inventory/Panel/MarginContainer/Inventory"]
+layout_mode = 2
+
+[node name="Inventory2" type="ScrollContainer" parent="Inventory/Panel/MarginContainer/Inventory"]
+custom_minimum_size = Vector2(3.66, 179.85)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Panel/MarginContainer/Inventory/Inventory2"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TotalValue" type="Label" parent="Inventory/Panel/MarginContainer/Inventory"]
+layout_mode = 2
+text = "Total Value: "
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Money" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Money: 50 $"
+
+[node name="ShovelLevel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Shovel Level: 1"
+
+[node name="MaxInventorySize" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Inventory Size: 5"

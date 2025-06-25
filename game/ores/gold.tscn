@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://w0jsjdfeues3"]
+
+[ext_resource type="PackedScene" uid="uid://lq6jherikiyq" path="res://ores/ore.tscn" id="1_nfbjk"]
+[ext_resource type="Script" uid="uid://bmn00fmqhlnmn" path="res://ores/ore_resource.gd" id="2_wjgvs"]
+
+[sub_resource type="Resource" id="Resource_iivca"]
+script = ExtResource("2_wjgvs")
+ore_name = "Gold"
+ore_value = 10
+rarity = 0.3
+min_y = -10.0
+max_y = -5.0
+metadata/_custom_type_script = "uid://bmn00fmqhlnmn"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfbjk"]
+albedo_color = Color(1, 0.878431, 0.235294, 1)
+metallic = 1.0
+roughness = 0.17
+
+[node name="Gold" instance=ExtResource("1_nfbjk")]
+ore_resource = SubResource("Resource_iivca")
+
+[node name="MeshInstance3D" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nfbjk")

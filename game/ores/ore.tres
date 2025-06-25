@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="OreResource" load_steps=2 format=3 uid="uid://dmljan2hbxrcx"]
+
+[ext_resource type="Script" uid="uid://bmn00fmqhlnmn" path="res://ores/ore_resource.gd" id="1_o7rom"]
+
+[resource]
+script = ExtResource("1_o7rom")
+ore_name = "Stone"
+ore_value = 5
+metadata/_custom_type_script = "uid://bmn00fmqhlnmn"

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccfr1gf73i5qw"]
+
+[ext_resource type="PackedScene" uid="uid://lq6jherikiyq" path="res://ores/ore.tscn" id="1_qc75s"]
+[ext_resource type="Resource" uid="uid://cylsv3x45y5p8" path="res://ores/stone.tres" id="2_ido5q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ido5q"]
+albedo_color = Color(0.493545, 0.493546, 0.493546, 1)
+
+[node name="Stone" instance=ExtResource("1_qc75s")]
+ore_resource = ExtResource("2_ido5q")
+
+[node name="MeshInstance3D" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ido5q")

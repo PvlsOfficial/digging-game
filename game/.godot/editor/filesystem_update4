@@ -1,1 +1,2 @@
-res://content/main.tscn
+res://player/ui/ui.tscn
+res://player/player.gd

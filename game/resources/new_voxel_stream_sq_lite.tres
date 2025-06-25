@@ -1,0 +1,6 @@
+[gd_resource type="VoxelStreamSQLite" format=3 uid="uid://c3bwldynn0ucj"]
+
+[resource]
+database_path = "saves/terrain_data5.sqlite"
+preferred_coordinate_format = "saves/terrain_data5.sqlite"
+save_generator_output = true

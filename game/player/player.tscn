@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://crrr1wv54l4ca"]
+
+[ext_resource type="Script" uid="uid://yen6171jqebg" path="res://player/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dbcyx42sxkvca" path="res://player/camera_3d.gd" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://nr5gsqmfbwqb" path="res://assets/Crosshair.png" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://k3pkdqubt8re" path="res://player/ui/ui.tscn" id="4_yw30f"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_onrkg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i3pqv"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_4flbx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_onrkg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_i3pqv")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.60325, 0)
+script = ExtResource("2_onrkg")
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -5)
+collide_with_areas = true
+
+[node name="VoxelViewer" type="VoxelViewer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(32, 32)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_g1dw6")
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("4_yw30f")]
