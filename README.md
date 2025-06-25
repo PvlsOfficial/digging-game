@@ -1,6 +1,6 @@
 # A Game About Digging a Hole – Godot Edition
 
-![Project Logo](related/presskit/Logo.png)  
+![Project Logo](presskit/Logo.png)  
 *Low-poly / voxel-based digging game made with Godot 4.4 and Zylann's Voxel Plugin*
 
 ---
