@@ -43,7 +43,7 @@ transform = Transform3D(-0.953941, -0.269524, 0.131733, 0.144847, -0.0292696, 0.
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_aqk2v")
 
-[node name="VoxelTerrain" type="VoxelTerrain" parent="."]
+[node name="VoxelTerrain" type="VoxelTerrain" parent="." groups=["terrain"]]
 bounds = AABB(0, -64, 0, 80, 80, 80)
 material_override = SubResource("StandardMaterial3D_aqk2v")
 stream = ExtResource("2_036b0")

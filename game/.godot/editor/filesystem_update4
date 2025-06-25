@@ -1,2 +1,11 @@
-res://player/ui/ui.tscn
+res://world.tscn
+res://autoload/Singleton.gd
 res://player/player.gd
+res://ores/ore.tscn
+res://player/player.tscn
+res://player/ui/ui.tscn
+res://saves/save.tres
+res://world_new.tscn
+res://resources/new_voxel_stream_sq_lite.tres
+res://assets/road/road_center.tscn
+res://assets/road/road_side.tscn

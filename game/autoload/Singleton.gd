@@ -2,16 +2,17 @@ extends Node
 
 var seed = 123
 var shovel_level = 1
+var shovel_upgrade_price = 50
 var max_inventory_size = 5
 
 
 var inventory : Array[OreResource] = []
 var money : int = 0
 
-signal sold
+signal ui_update_action
 
 func _ready():
-	sold.connect(get_tree().get_first_node_in_group("ui").update_inventory_ui)
+	ui_update_action.connect(get_tree().get_first_node_in_group("ui").update_inventory_ui)
 	load_game()
 
 func update_money(amount):
@@ -22,7 +23,7 @@ func sell():
 		for ore_resource in inventory:
 			update_money(ore_resource.ore_value)
 		inventory.clear()
-		sold.emit()
+		ui_update_action.emit()
 		save_game()
 
 func add_to_inventory(ore_resource : OreResource):
@@ -33,6 +34,17 @@ func is_inventory_full():
 	if inventory.size() >= max_inventory_size:
 		return true
 	return false
+
+func level_up_shovel():
+	if shovel_upgrade_price <= money:
+		money -= shovel_upgrade_price
+		shovel_upgrade_price *= 2
+		shovel_level += 1
+		ui_update_action.emit()
+	else:
+		print("not enough money")
+	save_game()
+
 
 # "user://save.tres"
 func save_game(path: String = "res://saves/save.tres"):
